@@ -17,6 +17,8 @@ from different terminal tabs you can launch:
 
 roslaunch m2wr_description spawn.launch: inizialization of the agv in gazebo
 
+after the robot spawn in gazebo it is possible to testing its capabilities. The simplest test is to use the manual control to move the robot inside gazebo. The easiest and most common tool for this is "teleop_twist_keyboard" provided directly by ros for each version (http://wiki.ros.org/teleop_twist_keyboard)
+
 roslaunch m2wr_description rviz.launch: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
 
 rosrun gazebo_ros gazebo: world simulator
