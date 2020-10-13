@@ -5,8 +5,8 @@ for this project ros melodic is required
 
 simple start-up:
 pull the repo
-catkin_make inside simulation_ws folder
-source simulation_ws/devel/setup
+catkin_make inside didactic_agv folder
+source didactic_agv/devel/setup
 
 from different terminal tabs you can launch:
 
