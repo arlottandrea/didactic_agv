@@ -6,7 +6,7 @@ for this project ros melodic is required
 simple start-up:
 pull the repo
 catkin_make inside didactic_agv folder
-source didactic_agv/devel/setup
+source didactic_agv/devel/setup.bash
 
 from different terminal tabs you can launch:
 
