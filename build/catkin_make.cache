@@ -1,0 +1,2 @@
+m2wr_description
+-DCATKIN_DEVEL_PREFIX=/home/filippo/development_ws/didactic_agv/devel -DCMAKE_INSTALL_PREFIX=/home/filippo/development_ws/didactic_agv/install -G Unix Makefiles
