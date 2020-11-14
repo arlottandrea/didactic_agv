@@ -1,4 +1,4 @@
-prefix=/home/drea/simulation_ws/devel
+prefix=/home/filippo/development_ws/didactic_agv/devel
 
 Name: path_planning
 Description: Description of path_planning

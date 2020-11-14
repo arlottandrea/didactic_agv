@@ -293,6 +293,9 @@ class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/filippo/development_ws/didactic_agv/build/gtest/googlemock
 
@@ -348,11 +351,19 @@ lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 //Value Computed by CMake
 m2wr_description_BINARY_DIR:STATIC=/home/filippo/development_ws/didactic_agv/build/m2wr_description
 
+m2wr_description_DIR:PATH=
+
 //Value Computed by CMake
 m2wr_description_SOURCE_DIR:STATIC=/home/filippo/development_ws/didactic_agv/src/m2wr_description
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
+
+//Value Computed by CMake
+path_planning_BINARY_DIR:STATIC=/home/filippo/development_ws/didactic_agv/build/path_planning
+
+//Value Computed by CMake
+path_planning_SOURCE_DIR:STATIC=/home/filippo/development_ws/didactic_agv/src/path_planning
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
@@ -380,6 +391,9 @@ roslib_DIR:PATH=/opt/ros/melodic/share/roslib/cmake
 
 //The directory containing a CMake configuration file for rospack.
 rospack_DIR:PATH=/opt/ros/melodic/share/rospack/cmake
+
+//The directory containing a CMake configuration file for rospy.
+rospy_DIR:PATH=/opt/ros/melodic/share/rospy/cmake
 
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
@@ -503,7 +517,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

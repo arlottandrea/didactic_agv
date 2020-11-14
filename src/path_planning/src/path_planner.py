@@ -1,16 +1,33 @@
 #! /usr/bin/env python
 import rospy
 import math
+import argparse
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point, Twist
 from nav_msgs.msg import Odometry
 from tf import transformations
 
 class path():
+    
     def __init__(self):
+        parser = argparse.ArgumentParser()
         self.pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
         self.odom = rospy.Subscriber('/odom', Odometry, self.clbk_odom)
-        self.goal = Point(2, 3, 0)
+        parser.add_argument("point")
+        args = parser.parse_args()
+        if args.point == 'beer':
+            goal_point = Point(5, 5, 0)
+        elif args.point == 'hammer':
+            goal_point = Point(5, 0, 0)
+        elif args.point == 'coke':
+            goal_point = Point(0, 3, 0)
+        elif args.point == 'man':
+            goal_point = Point(2, 7, 0)
+        elif args.point == 'home':
+            goal_point = Point(0, 0, 0)
+        else:
+            goal_point = Point(-1, -1, 0)
+        self.goal = goal_point
         self.yaw_ = 0.01
         self.err_pos = 0.01
         self.delta_yaw = 0.2
@@ -25,7 +42,7 @@ class path():
     
     def goahead(self):
         if self.Dist_Precision_ < self.err_pos :
-            self.twist.linear.x = 0.2
+            self.twist.linear.x = 0.5
             self.pub.publish(self.twist)	
             self.clearmsg()
             if self.Yaw_Precision_ < math.fabs(self.delta_yaw):
