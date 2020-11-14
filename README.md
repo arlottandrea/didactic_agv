@@ -26,6 +26,8 @@ after the robot spawn in gazebo it is possible to testing its capabilities. The 
 roslaunch m2wr_description rviz.launch: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
 
 rosrun gazebo_ros gazebo: world simulator
+here open the world avaible in the folder "world".
+/scrivere come
 
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py: keyboard control of the robot
 
