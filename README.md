@@ -41,4 +41,9 @@ e.g. rosrun path_planning path_planner.py beer
 
 rosrun path_planning obs_av.py
 
+GUI:
+from a sourced terminal run: rqt -p didactic_agv_GUI.perspective 
+this will open a new gui. to set up the right configuration of rViz tool, click on "File" button and then "Open Congfig". Then source the "gui_config.rViz" in the workspace folder.
+
+
 
