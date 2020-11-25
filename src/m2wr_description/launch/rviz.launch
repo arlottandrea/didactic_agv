@@ -12,6 +12,5 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
 
   <!-- Show in Rviz   -->
-  <node name="rviz" pkg="rviz" type="rviz" />
-
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find m2wr_description)/default.rviz" />
 </launch>

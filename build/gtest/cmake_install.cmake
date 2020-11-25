@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/filippo/development_ws/didactic_agv/install")
+  set(CMAKE_INSTALL_PREFIX "/home/drea/Desktop/arp/didactic_agv/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/filippo/development_ws/didactic_agv/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/drea/Desktop/arp/didactic_agv/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

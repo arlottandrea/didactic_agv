@@ -1,8 +1,8 @@
-# Install script for directory: /home/filippo/development_ws/didactic_agv/src/m2wr_description
+# Install script for directory: /home/drea/Desktop/arp/didactic_agv/src/m2wr_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/filippo/development_ws/didactic_agv/install")
+  set(CMAKE_INSTALL_PREFIX "/home/drea/Desktop/arp/didactic_agv/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/filippo/development_ws/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/drea/Desktop/arp/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/m2wr_description/cmake" TYPE FILE FILES
-    "/home/filippo/development_ws/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_descriptionConfig.cmake"
-    "/home/filippo/development_ws/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_descriptionConfig-version.cmake"
+    "/home/drea/Desktop/arp/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_descriptionConfig.cmake"
+    "/home/drea/Desktop/arp/didactic_agv/build/m2wr_description/catkin_generated/installspace/m2wr_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/m2wr_description" TYPE FILE FILES "/home/filippo/development_ws/didactic_agv/src/m2wr_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/m2wr_description" TYPE FILE FILES "/home/drea/Desktop/arp/didactic_agv/src/m2wr_description/package.xml")
 endif()
 

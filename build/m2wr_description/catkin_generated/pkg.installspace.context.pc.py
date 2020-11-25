@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "m2wr_description"
-PROJECT_SPACE_DIR = "/home/filippo/development_ws/didactic_agv/install"
+PROJECT_SPACE_DIR = "/home/drea/Desktop/arp/didactic_agv/install"
 PROJECT_VERSION = "0.0.0"
