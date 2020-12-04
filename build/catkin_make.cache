@@ -1,2 +1,0 @@
-m2wr_description:path_planning
--DCATKIN_DEVEL_PREFIX=/home/drea/Desktop/arp/didactic_agv/devel -DCMAKE_INSTALL_PREFIX=/home/drea/Desktop/arp/didactic_agv/install -G Unix Makefiles
