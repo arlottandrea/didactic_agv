@@ -59,6 +59,6 @@ this algorithm is a simple way to provide path planning and obstacle avoidance t
 Simple maps are convenient for this kind of robot. more complex maps can foil the algorithm!
 
 
-
+![alt text](https://github.com/arlottandrea/didactic_agv/blob/main/bug0.jpg?raw=true)
 
 
