@@ -1,0 +1,4 @@
+<launch>
+    <node name="obstacle_avoidance" pkg="path_planning" type="obs_av.py" respawn="true" />
+    <node name="path_planner" pkg="path_planning" type="path_planner.py" respawn="true" />
+</launch>
