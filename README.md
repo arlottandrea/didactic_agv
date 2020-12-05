@@ -48,8 +48,17 @@ e.g. ```rosrun path_planning path_planner.py beer ```
 * ```rosrun path_planning obs_av.py```
 
 * GUI:
-from a sourced terminal run: ```rqt -p didactic_agv_GUI.perspective ```
-this will open a new gui. to set up the right configuration of rViz tool, click on "File" button and then "Open Congfig". Then source the "gui_config.rViz" in the workspace folder.
+to load a new rqtgui let open the terminal and use the command: ```rqt -p didactic_agv_GUI.perspective ```
+this will open a new window. To set up the right configuration of rViz tool, click on "File" button and then "Open Congfig". Then source the "gui_config.rViz" in the workspace folder.
+
+### The algorithm behind the robot motion
+* "bug 0" algorithm
+this algorithm is a simple way to provide path planning and obstacle avoidance to a robot.
+**Preconditions :** the robot knows the position of the goal and has sensor to detect obstacles.
+**Algorithm steps :**  a) the robot heads toward the goal. b) when obstacle encountered it follows the obstacle until it can head the goal again. c) go straight to the goal.
+Simple maps are convenient for this kind of robot. more complex maps can foil the algorithm!
+
+
 
 
 
