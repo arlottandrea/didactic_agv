@@ -2,6 +2,3 @@ build/*
 !build/build.xml
 build
 build/
-devel/*
-devel
-devel/
