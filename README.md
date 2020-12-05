@@ -32,7 +32,7 @@ after the robot spawn in gazebo it is possible to testing its capabilities. The 
 
 * ```roslaunch m2wr_description rviz.launch```: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
 
-* ```rosrun gazebo_ros gazebo```: world simulator
+* ```rosrun gazebo_ros gazebo world/test1```: world simulator
 
 here open the world avaible in the folder "world".
 /scrivere come afre ad aprire il mondo
@@ -45,7 +45,7 @@ here open the world avaible in the folder "world".
 		** hammer<br />
 e.g. ```rosrun path_planning path_planner.py beer ```		
 
-* ```rosrun path_planning obs_av.py```
+* ```rosrun path_planning obs_av.py``` obstacle avoidance could be called alone or in the launch file with the path_planning. In this case the robot will move to the target and take into account obstacle
 
 * GUI:
 to load a new rqtgui let open the terminal and use the command: ```rqt -p didactic_agv_GUI.perspective ```
