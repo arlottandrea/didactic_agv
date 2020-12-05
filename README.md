@@ -22,9 +22,9 @@ from different terminal tabs you can launch the following nodes. (Attention: if 
 
 ### launching other nodes
 For path planning and obstacle avoidance, a pre-compile is needed.
-For doing this, make this on the proper folder.
-	* ```chmod gu+x path_planner.py```
-	* ```chmod gu+x obs_av.py```
+For doing this, make this on the proper folder. <br />
+	* ```chmod gu+x path_planner.py``` <br />
+	* ```chmod gu+x obs_av.py``` <br />
 
 after the robot spawn in gazebo it is possible to testing its capabilities. The simplest test is to use the manual control to move the robot inside gazebo. The easiest and most common tool for this is "teleop_twist_keyboard" provided directly by ros for each version (http://wiki.ros.org/teleop_twist_keyboard)
 
