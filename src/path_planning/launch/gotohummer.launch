@@ -1,0 +1,4 @@
+<launch>
+	<node name="planner" pkg="path_planning" type="path_planner.py" args="--point 'hummer'" required="true"  output="screen"/>
+	<node name="obstacle_avoidance" pkg="path_planning" type="obs_av.py" />
+</launch>

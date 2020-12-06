@@ -10,23 +10,27 @@ from tf import transformations
 class path():
     
     def __init__(self):
-        parser = argparse.ArgumentParser()
+        self.parser = argparse.ArgumentParser()
         self.pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
         self.odom = rospy.Subscriber('/odom', Odometry, self.clbk_odom)
-        parser.add_argument("point")
-        args = parser.parse_args()
+        self.parser.add_argument(   '--point', '-p', 
+                            type=str, 
+                            dest='point', 
+                            help='set message to speech')
+        args, unknown = self.parser.parse_known_args()
         if args.point == 'beer':
-            goal_point = Point(5, 5, 0)
+            goal_point = Point(4, 4, 0)
         elif args.point == 'hammer':
-            goal_point = Point(5, 0, 0)
+            goal_point = Point(4, 0, 0)
         elif args.point == 'coke':
-            goal_point = Point(0, 3, 0)
+            goal_point = Point(0, 4, 0)
         elif args.point == 'man':
-            goal_point = Point(2, 7, 0)
+            goal_point = Point(1, 6, 0)
         elif args.point == 'home':
             goal_point = Point(0, 0, 0)
         else:
             goal_point = Point(-1, -1, 0)
+
         self.goal = goal_point
         self.yaw_ = 0.01
         self.err_pos = 0.01
@@ -42,7 +46,7 @@ class path():
     
     def goahead(self):
         if self.Dist_Precision_ < self.err_pos :
-            self.twist.linear.x = 0.5
+            self.twist.linear.x = 0.145
             self.pub.publish(self.twist)	
             self.clearmsg()
             if self.Yaw_Precision_ < math.fabs(self.delta_yaw):
@@ -54,9 +58,9 @@ class path():
     def fixheading(self):
         if self.Yaw_Precision_ < math.fabs(self.delta_yaw):
             if 0 > self.delta_yaw :
-                self.twist.angular.z = 0.3 
+                self.twist.angular.z = 1.4
             else: 
-                self.twist.angular.z = -0.3
+                self.twist.angular.z = -1.4
             self.pub.publish(self.twist)
             self.clearmsg()			
         else:
@@ -68,6 +72,7 @@ class path():
         self.twist.angular.z = 0
         self.pub.publish(self.twist)
         rospy.loginfo('done!')
+	rospy.signal_shutdown('goal reached!')
     
     #callback
     def clbk_odom(self, msg):
@@ -83,7 +88,7 @@ class path():
         self.delta_yaw = math.atan2(self.goal.y - pos_.y, self.goal.x - pos_.x) - self.yaw_
         self.err_pos = math.sqrt(pow(pos_.y - self.goal.y, 2) + pow(pos_.x - self.goal.x, 2))
         rospy.loginfo(self.delta_yaw)
-        rospy.logerr(self.err_pos)
+        #rospy.logerr(self.err_pos)
         if self.state == 0:
             rospy.loginfo('heading!')
             self.fixheading()
@@ -99,12 +104,13 @@ class path():
             pass
 
 def main():
-    rospy.init_node('go_to_point')
+    rospy.init_node('go_to_point', disable_signals=True)
     planner = path()
-    rate = rospy.Rate(20)
+    rate = rospy.Rate(1)
     while not rospy.is_shutdown():
         rate.sleep()
         rospy.loginfo(planner.state)
+	rospy.spin()
 
 if __name__ == '__main__':
     main()
