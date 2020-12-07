@@ -32,14 +32,13 @@ after the robot spawn in gazebo it is possible to testing its capabilities. The 
 
 * ```roslaunch path_planning obs_av.launch```: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
 
-* ```roslaunch path_planning goto**.launch`` <br />
+* ```roslaunch path_planning goto**.launch```<br />
 	point: 	** beer<br />
 		** coke<br />
 		** person<br />
 		** home<br />
 		** hammer<br />
-e.g. ```roslaunch path_planning gotobeer.launch  
-```		
+e.g. ```roslaunch path_planning gotobeer.launch```		
 these launch files start path planning node to reach the desired destination, plus the obstacle avoidance node to avoid collisions. Nodes shutdown after the goal are reached.
 
 * GUI:
