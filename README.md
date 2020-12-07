@@ -16,7 +16,7 @@ For this reason the nodes doesn't require external plugin or third-party app. Th
 
 * ```source devel/setup.bash```
 
-* ```roslaunch m2wr_description spawn.launch``` inizialization of the agv in gazebo
+* ```roslaunch m2wr_description sim.launch``` inizialization of the agv in gazebo, the gui and the rviz visualization
 
 from different terminal tabs you can launch the following nodes. (Attention: if it doesn't work try to source your new terminal windows, terminator is highly raccomended).
 
@@ -28,28 +28,23 @@ For doing this, make this on the proper folder. <br />
 
 after the robot spawn in gazebo it is possible to testing its capabilities. The simplest test is to use the manual control to move the robot inside gazebo. The easiest and most common tool for this is "teleop_twist_keyboard" provided directly by ros for each version (http://wiki.ros.org/teleop_twist_keyboard)
 
-* ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```: keyboard control of the robot
+* ```roslaunch path_planning keyboard.launch```: keyboard control of the robot + obstacle avoidance algorithm
 
-* ```roslaunch m2wr_description rviz.launch```: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
+* ```roslaunch path_planning obs_av.launch```: rviz shows the different topic of the agv. here you can see camera captures and laser captures 
 
-* ```rosrun gazebo_ros gazebo world/test1```: world simulator
-
-here open the world avaible in the folder "world".
-/scrivere come afre ad aprire il mondo
-
-* ```rosrun path_planning path_planner.py --point``` <br />
---point: 	** beer<br />
+* ```roslaunch path_planning goto**.launch`` <br />
+	point: 	** beer<br />
 		** coke<br />
 		** person<br />
 		** home<br />
 		** hammer<br />
-e.g. ```rosrun path_planning path_planner.py beer ```		
-
-* ```rosrun path_planning obs_av.py``` obstacle avoidance could be called alone or in the launch file with the path_planning. In this case the robot will move to the target and take into account obstacle
+e.g. ```roslaunch path_planning gotobeer.launch  
+```		
+these launch files start path planning node to reach the desired destination, plus the obstacle avoidance node to avoid collisions. Nodes shutdown after the goal are reached.
 
 * GUI:
-to load a new rqtgui let open the terminal and use the command: ```rqt -p didactic_agv_GUI.perspective ```
-this will open a new window. To set up the right configuration of rViz tool, click on "File" button and then "Open Congfig". Then source the "gui_config.rViz" in the workspace folder.
+the user interface is based on rqt_gui node.
+```roslaunch m2wr_description sim.launch``` will open a new window. To set up the right configuration of rViz tool, click on "File" button and then "Open Congfig". Then source the "gui_config.rViz" in the workspace folder.
 
 ### The algorithm behind the robot motion
 * "bug 0" algorithm
@@ -61,4 +56,5 @@ Simple maps are convenient for this kind of robot. more complex maps can foil th
 
 ![alt text](https://github.com/arlottandrea/didactic_agv/blob/main/bug0.jpg?raw=true)
 
-
+### node interconnection:
+![alt text](https://github.com/arlottandrea/didactic_agv/blob/main/rosgraph.png?raw=true)
