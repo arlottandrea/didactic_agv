@@ -54,7 +54,7 @@ this algorithm is a simple way to provide path planning and obstacle avoidance t
 Simple maps are convenient for this kind of robot. more complex maps can foil the algorithm!
 
 
-![alt text](https://github.com/arlottandrea/didactic_agv/tree/launch_files_added/bug0.jpg?raw=true)
+![alt text](https://github.com/arlottandrea/didactic_agv/blob/launch_files_added/bug0.jpg?raw=true)
 
 ### node interconnection:
-![alt text](https://github.com/arlottandrea/didactic_agv/tree/launch_files_added/rosgraph.png?raw=true)
+![alt text](https://github.com/arlottandrea/didactic_agv/blob/launch_files_added/rosgraph.png?raw=true)
