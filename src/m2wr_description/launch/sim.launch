@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+	<param name="robot_description" command="cat '$(find m2wr_description)/urdf/m2wr.xacro'"/>
+
+	<arg name="x" default="0"/>
+	<arg name="y" default="0"/>
+	<arg name="z" default="0.5"/>
+
+	<node name="m2wr_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model m2wr -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+<node name="gazebo" pkg="gazebo_ros" type="gazebo" args="'$(find m2wr_description)/world/test1'" />
+
+  <param name="robot_description" command="cat '$(find m2wr_description)/urdf/m2wr.xacro'"/>
+
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d '$(find m2wr_description)/rviz_config.rviz'" />
+
+	<node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" args="--perspective-file '$(find m2wr_description)/agv_gui.perspective'" />
+
+</launch>

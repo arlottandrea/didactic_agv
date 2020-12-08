@@ -1,0 +1,4 @@
+<launch>
+	<node name="obstacle_avoidance" pkg="path_planning" type="obs_av.py" />
+	<node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" required="true" output="screen" />
+</launch>

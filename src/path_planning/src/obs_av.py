@@ -29,38 +29,61 @@ def take_action(regions):
         state_description = 'case 2 - front'
         linear_x = -0.25
         angular_z = 0.
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] > 1 and regions['fleft'] > 1 and regions['fright'] < 1:
         state_description = 'case 3 - fright'
         linear_x = 0
         angular_z = -0.15
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] > 1 and regions['fleft'] < 1 and regions['fright'] > 1:
         state_description = 'case 4 - fleft'
         linear_x = 0
         angular_z = 0.15
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] < 1 and regions['fleft'] > 1 and regions['fright'] < 1:
         state_description = 'case 5 - front and fright'
         linear_x = -0.15
         angular_z = -0.15
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] < 1 and regions['fleft'] < 1 and regions['fright'] > 1:
         state_description = 'case 6 - front and fleft'
         linear_x = -0.15
         angular_z = 0.15
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] < 1 and regions['fleft'] < 1 and regions['fright'] < 1:
         state_description = 'case 7 - front and fleft and fright'
         linear_x = 0
         angular_z = 0.15
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     elif regions['front'] > 1 and regions['fleft'] < 1 and regions['fright'] < 1:
         state_description = 'case 8 - fleft and fright'
         linear_x = 0.15
         angular_z = 0
+	rospy.loginfo(state_description)
+	msg.linear.x = linear_x
+	msg.angular.z = angular_z
+	pub.publish(msg)
     else:
         state_description = 'unknown case'
         rospy.loginfo(regions)
-
-    rospy.loginfo(state_description)
-    msg.linear.x = linear_x
-    msg.angular.z = angular_z
-    pub.publish(msg)
 
 def main():
     global pub

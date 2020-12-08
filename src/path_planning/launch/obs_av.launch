@@ -1,0 +1,3 @@
+<launch>
+	<node name="obstacle_avoidance" pkg="path_planning" type="obs_av.py" />
+</launch>
