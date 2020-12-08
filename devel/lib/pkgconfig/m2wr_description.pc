@@ -1,4 +1,4 @@
-prefix=/home/filippo/didactic_agv/devel
+prefix=/home/drea/didactic_agv/devel
 
 Name: m2wr_description
 Description: Description of m2wr_description
